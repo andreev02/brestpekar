@@ -1,0 +1,86 @@
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Brest Pekar.exe
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Brest Pekar.deps.json
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Brest Pekar.runtimeconfig.json
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Brest Pekar.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Brest Pekar.pdb
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\ControlzEx.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\MahApps.Metro.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\MaterialDesignThemes.MahApps.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.csproj.AssemblyReference.cache
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar_MarkupCompile.cache
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar_MarkupCompile.lref
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\App.baml
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.g.resources
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.AssemblyInfoInputs.cache
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.AssemblyInfo.cs
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.csproj.CoreCompileInputs.cache
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.csproj.CopyComplete
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.dll
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\refint\Brest Pekar.dll
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.pdb
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar.genruntimeconfig.cache
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\ref\Brest Pekar.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\MySqlConnector.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\CommonServiceLocator.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Extras.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Platform.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\System.Windows.Interactivity.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\debian-x64\native\libuv.so
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\fedora-x64\native\libuv.so
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\opensuse-x64\native\libuv.so
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\osx\native\libuv.dylib
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\rhel-x64\native\libuv.so
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win7-arm\native\libuv.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win7-x64\native\libuv.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win7-x86\native\libuv.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\HarfBuzzSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\LiveChartsCore.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\LiveChartsCore.SkiaSharpView.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\LiveChartsCore.SkiaSharpView.WPF.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\SkiaSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\RestSharp.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Yandex.Geocoder.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Aspose.Words.Pdf2Word.dll
+C:\Users\lesha\source\repos\Brest Pekar\bin\Debug\net6.0-windows\Aspose.Words.dll
+C:\Users\lesha\source\repos\Brest Pekar\obj\Debug\net6.0-windows\Brest Pekar_Content.g.cs

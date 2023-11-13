@@ -1,0 +1,1230 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:Brest_Pekar"
+        xmlns:ViewModels="clr-namespace:Brest_Pekar.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:controlzex="urn:controlzex"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:Models="clr-namespace:Brest_Pekar.Models"
+        x:Class="Brest_Pekar.MainWindow"
+        mc:Ignorable="d"
+        ResizeMode="CanResizeWithGrip"
+        Title="Контур.Пекарь"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Background="{x:Null}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        Icon="/icon.ico"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+        Width="1460"
+        Height="735">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="Margin"
+                                TargetName="tabcontrol">
+                        <ThicknessAnimation From="-200,0,0,0"
+                                            To="0,0,0,0"
+                                            Duration="0:0:3" />
+                    </Storyboard>
+                </BeginStoryboard>
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="Opacity"
+                                TargetName="tabcontrol">
+                        <DoubleAnimation From="0"
+                                         To="1"
+                                         Duration="0:0:3" />
+                    </Storyboard>
+                </BeginStoryboard>
+                <!-- <BeginStoryboard>
+					<Storyboard TargetProperty="Margin" TargetName="girl_picture">
+						<ThicknessAnimation From="0,22,0,0" To="373,22,0,0"
+							Duration="0:0:3"
+						 />
+					</Storyboard>
+				</BeginStoryboard> -->
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="74*" />
+            <RowDefinition Height="645*" />
+        </Grid.RowDefinitions>
+        <ProgressBar Grid.Row="1"
+                     IsIndeterminate="True"
+                     VerticalAlignment="Top"
+                     Height="4" />
+        <TabControl x:Name="tabcontrol"
+                    TabStripPlacement="Top"
+                    Grid.RowSpan="2"
+                    Width="auto"
+                    Height="auto"
+                    VerticalContentAlignment="Top"
+                    materialDesign:ElevationAssist.Elevation="Dp8"
+                    materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
+                    SnapsToDevicePixels="True"
+                    Style="{StaticResource MaterialDesignNavigationRailTabControl}">
+            <!-- <materialDesign:NavigationRailAssist.FloatingContent>
+				<StackPanel Orientation="Horizontal">
+					<Image Source="/Resources/hleb.png" Stretch="Fill" Width="auto" Height="72"/>
+					<Separator Margin="0,2,0,10" >
+						<Separator.RenderTransform>
+							<ScaleTransform ScaleY="2" />
+						</Separator.RenderTransform>
+					</Separator>
+				</StackPanel>
+			</materialDesign:NavigationRailAssist.FloatingContent> -->
+            <TabItem Width="140"
+                     VerticalAlignment="Center">
+                <TabItem.Header>
+                    <StackPanel Width="111"
+                                Height="auto"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <materialDesign:PackIcon Width="24"
+                                                 Height="24"
+                                                 HorizontalAlignment="Left"
+                                                 Kind="Home" />
+                        <TextBlock Margin="10,0,0,0"
+                                   HorizontalAlignment="Left"
+                                   Text="Главная"
+                                   LineHeight="NaN"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+                <ScrollViewer>
+                    <Grid Height="1202">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="685*" />
+                            <ColumnDefinition Width="758*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Resources/financial_accounting_calculate233530.png"
+                               Stretch="None"
+                               Width="512"
+                               Height="512"
+                               Margin="0,67,138,0"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Right"
+                               Grid.Column="1" />
+                        <Image x:Name="girl_picture"
+                               Source="/Resources/3736_illustration.png"
+                               Stretch="None"
+                               Width="965"
+                               Height="auto"
+                               HorizontalAlignment="Left"
+                               Grid.Column="1"
+                               Margin="-200,0,0,0" />
+                        <TextBlock Style="{StaticResource MaterialDesignHeadline1TextBlock}"
+                                   Text="Добро пожаловать"
+                                   Margin="50,2,0,0"
+                                   Grid.ColumnSpan="2" />
+                        <TextBlock TextWrapping="Wrap"
+                                   Width="600"
+                                   Height="140"
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   Text="В Контур.Пекарь любые рутинные задачи по реализации продукции решаются в несколько кликов и без необходимости разбираться в бухгалтерии."
+                                   Margin="50,142,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top" />
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    Margin="50,387,0,0"
+                                    Height="528"
+                                    Width="550">
+                            <Separator Grid.Column="0"
+                                       Margin="0,-100,0,0" />
+                            <TextBlock Style="{StaticResource MaterialDesignHeadline3TextBlock}"
+                                       Text="По инициативе:" />
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Left"
+                                        Margin="0,-30,0,0"
+                                        VerticalAlignment="Center">
+                                <materialDesign:Card Width="225"
+                                                     Height="400">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="140" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Image Height="140"
+                                               Source="Resources/hleb.png"
+                                               Stretch="Uniform" />
+                                        <Button Grid.Row="0"
+                                                Margin="0,0,16,-20"
+                                                HorizontalAlignment="Right"
+                                                VerticalAlignment="Bottom"
+                                                Click="PekarLink_Click"
+                                                Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}">
+                                            <materialDesign:PackIcon Kind="InsertLink" />
+                                        </Button>
+                                        <StackPanel Grid.Row="1"
+                                                    Margin="8,24,8,4">
+                                            <TextBlock FontWeight="Bold"
+                                                       Margin="0"
+                                                       Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                                       Text="ОАО 'Берестейский пекарь'" />
+                                            <TextBlock VerticalAlignment="Center"
+                                                       Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                                       Text="Является ведущим предприятием по производству хлебобулочных и кондитерских изделий Брестской области."
+                                                       TextWrapping="Wrap"
+                                                       FontSize="14" />
+                                        </StackPanel>
+                                    </Grid>
+                                </materialDesign:Card>
+                                <materialDesign:Card Width="225"
+                                                     Height="400"
+                                                     Margin="50">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="140" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Image Height="140"
+                                               Source="Resources/bgklp.jpg"
+                                               Stretch="UniformToFill" />
+                                        <Button Grid.Row="0"
+                                                Margin="0,0,16,-20"
+                                                HorizontalAlignment="Right"
+                                                VerticalAlignment="Bottom"
+                                                Click="BGKLPLink_Click"
+                                                Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}">
+                                            <materialDesign:PackIcon Kind="InsertLink" />
+                                        </Button>
+                                        <StackPanel Grid.Row="1"
+                                                    Margin="8,24,8,4">
+                                            <TextBlock FontWeight="Bold"
+                                                       Margin="0"
+                                                       Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                                       Text="БГКЛП им. В.Е. Чернышева" />
+                                            <TextBlock VerticalAlignment="Center"
+                                                       Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                                       Text="Ул. Кирова, 48, г.Барановичи, 225410, Республика Беларусь | Тел./факс: 8-(0163) 64-71-42 | bgklp@bgklp.by."
+                                                       TextWrapping="Wrap"
+                                                       FontSize="14" />
+                                        </StackPanel>
+                                    </Grid>
+                                </materialDesign:Card>
+                            </StackPanel>
+                        </StackPanel>
+                        <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp3"
+                                             Padding="5"
+                                             Grid.Column="0"
+                                             VerticalAlignment="Bottom"
+                                             Width="228"
+                                             HorizontalAlignment="Left"
+                                             Margin="170,0,0,100">
+                            <StackPanel>
+                                <TextBlock Text="Разработчик"
+                                           HorizontalAlignment="Center"
+                                           Style="{StaticResource MaterialDesignSubtitle2TextBlock}" />
+                                <materialDesign:Chip HorizontalAlignment="Center"
+                                                     Content="Алексей Андреев">
+                                    <materialDesign:Chip.Icon>
+                                        <Image Source="Resources/alesha.jpg"
+                                               Stretch="Uniform" />
+                                    </materialDesign:Chip.Icon>
+                                </materialDesign:Chip>
+                                <TextBlock VerticalAlignment="Center"
+                                           Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                           Text="Учашийся 4 курса, группа 510. БКГЛП им. В.Е.Чернышева."
+                                           TextWrapping="Wrap"
+                                           FontSize="14" />
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <StackPanel Grid.ColumnSpan="2"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom">
+                            <TextBlock Text="2023 г."
+                                       TextAlignment="Center" />
+                            <TextBlock Text="Дипломный проект" />
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Width="140"
+                     x:Name="tabitem_productTypes"
+                     Selector.Selected="tabcontrol_Selected"
+                     VerticalAlignment="Center">
+                <TabItem.Header>
+                    <StackPanel Width="111"
+                                Height="auto"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <materialDesign:PackIcon Width="24"
+                                                 Height="24"
+                                                 HorizontalAlignment="Left"
+                                                 Kind="Baguette" />
+                        <TextBlock Margin="10,0,0,0"
+                                   HorizontalAlignment="Left"
+                                   Text="Товары"
+                                   LineHeight="NaN"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Grid.Row="1">
+                    <Image Source="/Resources/business_taxday_233532.png"
+                           Stretch="None"
+                           HorizontalAlignment="Left" />
+                    <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp8"
+                                         Padding="10,0,10,10"
+                                         UniformCornerRadius="14"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center">
+                        <StackPanel>
+                            <DataGrid x:Name="grid_productTypes"
+                                      SelectionUnit="FullRow"
+                                      CanUserDeleteRows="False"
+                                      CanUserAddRows="False"
+                                      AutoGenerateColumns="False"
+                                      Loaded="DataGrid_Loaded"
+                                      RowEditEnding="DataGrid_RowEditEnding"
+                                      SelectedItem="{Binding SelectedProductType}"
+                                      ItemsSource="{Binding ProductTypes}"
+                                      Background="Transparent"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      MaxHeight="290">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Наименование"
+                                                        Width="200"
+                                                        Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                                    <DataGridTextColumn Header="Цена (BYN)"
+                                                        Width="200"
+                                                        Binding="{Binding Price, UpdateSourceTrigger=PropertyChanged}" />
+                                    <DataGridTemplateColumn Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <materialDesign:Badged Badge="DELETE"
+                                                                       BadgeColorZoneMode="Dark">
+                                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                            ToolTip="Удалить"
+                                                            Command="{Binding DataContext.RemoveProductTypeCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                            CommandParameter="{Binding DataContext.SelectedProductType, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                        <materialDesign:PackIcon Width="24"
+                                                                                 Height="24"
+                                                                                 HorizontalAlignment="Left"
+                                                                                 Kind="Delete" />
+                                                    </Button>
+                                                </materialDesign:Badged>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <materialDesign:Badged Margin="0,20,0,0"
+                                                   Badge="ADD"
+                                                   BadgeColorZoneMode="Dark">
+                                <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        ToolTip="Добавить"
+                                        Command="{Binding DataContext.AddProductTypeCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                    <materialDesign:PackIcon Width="24"
+                                                             Height="24"
+                                                             HorizontalAlignment="Left"
+                                                             Kind="Add" />
+                                </Button>
+                            </materialDesign:Badged>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </Grid>
+            </TabItem>
+            <TabItem Width="140"
+                     x:Name="tabitem_products"
+                     Selector.Selected="tabcontrol_Selected"
+                     VerticalAlignment="Center">
+                <TabItem.Header>
+                    <StackPanel Width="111"
+                                Height="auto"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <materialDesign:PackIcon Width="24"
+                                                 Height="24"
+                                                 HorizontalAlignment="Left"
+                                                 Kind="Warehouse" />
+                        <TextBlock Margin="10,0,0,0"
+                                   HorizontalAlignment="Left"
+                                   Text="Продукция"
+                                   LineHeight="NaN"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Grid.Row="1">
+                    <Image Source="/Resources/payment_calculation_233533.png"
+                           Stretch="None"
+                           HorizontalAlignment="Right" />
+                    <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp8"
+                                         Padding="10,0,10,10"
+                                         UniformCornerRadius="14"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center">
+                        <StackPanel>
+                            <DataGrid SelectionUnit="FullRow"
+                                      CanUserDeleteRows="False"
+                                      CanUserAddRows="False"
+                                      AutoGenerateColumns="False"
+                                      Unloaded="DataGrid_Unloaded"
+                                      Loaded="DataGrid_Loaded"
+                                      Name="grid_products"
+                                      RowEditEnding="DataGrid_RowEditEnding"
+                                      SelectedItem="{Binding SelectedProduct}"
+                                      ItemsSource="{Binding Products}"
+                                      Background="Transparent"
+                                      MaxHeight="290">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Номер"
+                                                        Binding="{Binding Id}"
+                                                        IsReadOnly="True" />
+                                    <DataGridTemplateColumn Header="Товар">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding DataContext.ProductTypes, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                          SelectedItem="{Binding Path=Product_Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                          DisplayMemberPath="Name"
+                                                          Text="{Binding Path=Product_Type.Name}"
+                                                          IsTextSearchEnabled="True"
+                                                          TextSearch.TextPath="Name"
+                                                          IsEditable="True"
+                                                          VerticalAlignment="Top" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="Дата производства"
+                                                            CanUserSort="True"
+                                                            SortMemberPath="Date_Of_Production">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <DatePicker VerticalAlignment="Top"
+                                                            SelectedDate="{Binding Date_Of_Production, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <materialDesign:Badged Badge="DELETE"
+                                                                       BadgeColorZoneMode="Dark">
+                                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                            ToolTip="Удалить"
+                                                            Command="{Binding DataContext.RemoveProductCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                            CommandParameter="{Binding DataContext.SelectedProduct, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                        <materialDesign:PackIcon Width="24"
+                                                                                 Height="24"
+                                                                                 HorizontalAlignment="Left"
+                                                                                 Kind="Delete" />
+                                                    </Button>
+                                                </materialDesign:Badged>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <materialDesign:Badged Margin="0,20,0,0"
+                                                   Badge="ADD"
+                                                   BadgeColorZoneMode="Dark">
+                                <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        ToolTip="Добавить"
+                                        Command="{Binding DataContext.AddProductCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                    <materialDesign:PackIcon Width="24"
+                                                             Height="24"
+                                                             HorizontalAlignment="Left"
+                                                             Kind="Add" />
+                                </Button>
+                            </materialDesign:Badged>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </Grid>
+            </TabItem>
+            <TabItem Width="140"
+                     VerticalAlignment="Center"
+                     x:Name="tabitem_stores"
+                     Selector.Selected="tabcontrol_Selected">
+                <TabItem.Header>
+                    <StackPanel Width="111"
+                                Height="auto"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <materialDesign:PackIcon Width="24"
+                                                 Height="24"
+                                                 HorizontalAlignment="Left"
+                                                 Kind="Store" />
+                        <TextBlock Margin="10,0,0,0"
+                                   HorizontalAlignment="Left"
+                                   Text="Магазины"
+                                   LineHeight="NaN"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TabControl HorizontalAlignment="Stretch"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                materialDesign:ColorZoneAssist.Background="Crimson"
+                                materialDesign:ColorZoneAssist.Foreground="White"
+                                materialDesign:ColorZoneAssist.Mode="Custom"
+                                Style="{StaticResource MaterialDesignFilledTabControl}">
+                        <TabItem Header="Банки и НКФО">
+                            <Grid Grid.Row="1">
+                                <Image Source="/Resources/business_taxday_233532.png"
+                                       Stretch="Uniform"
+                                       HorizontalAlignment="Left" />
+                                <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp8"
+                                                     Padding="10,0,10,10"
+                                                     UniformCornerRadius="14"
+                                                     HorizontalAlignment="Center"
+                                                     VerticalAlignment="Center">
+                                    <StackPanel>
+                                        <DataGrid SelectionUnit="FullRow"
+                                                  CanUserDeleteRows="False"
+                                                  CanUserAddRows="False"
+                                                  AutoGenerateColumns="False"
+                                                  Unloaded="DataGrid_Unloaded"
+                                                  Loaded="DataGrid_Loaded"
+                                                  RowEditEnding="DataGrid_RowEditEnding"
+                                                  SelectedItem="{Binding SelectedBank}"
+                                                  ItemsSource="{Binding Banks}"
+                                                  Background="Transparent"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  MaxHeight="200">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Наименование"
+                                                                    Width="200"
+                                                                    Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                                                <DataGridTemplateColumn Width="100">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <materialDesign:Badged Badge="DELETE"
+                                                                                   BadgeColorZoneMode="Dark">
+                                                                <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                                        ToolTip="Удалить"
+                                                                        Command="{Binding DataContext.RemoveBankCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                                        CommandParameter="{Binding DataContext.SelectedBank, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                                    <materialDesign:PackIcon Width="24"
+                                                                                             Height="24"
+                                                                                             HorizontalAlignment="Left"
+                                                                                             Kind="Delete" />
+                                                                </Button>
+                                                            </materialDesign:Badged>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <materialDesign:Badged Margin="0,20,0,0"
+                                                               Badge="ADD"
+                                                               BadgeColorZoneMode="Dark">
+                                            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                    ToolTip="Добавить"
+                                                    Command="{Binding DataContext.AddBankCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                <materialDesign:PackIcon Width="24"
+                                                                         Height="24"
+                                                                         HorizontalAlignment="Left"
+                                                                         Kind="Add" />
+                                            </Button>
+                                        </materialDesign:Badged>
+                                    </StackPanel>
+                                </materialDesign:Card>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Основные счета">
+                            <Grid Grid.Row="1">
+                                <Image Source="/Resources/business_taxday_233532.png"
+                                       Stretch="Uniform"
+                                       HorizontalAlignment="Right" />
+                                <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp8"
+                                                     Padding="10,0,10,10"
+                                                     UniformCornerRadius="14"
+                                                     HorizontalAlignment="Center"
+                                                     VerticalAlignment="Center">
+                                    <StackPanel>
+                                        <DataGrid SelectionUnit="FullRow"
+                                                  CanUserDeleteRows="False"
+                                                  CanUserAddRows="False"
+                                                  AutoGenerateColumns="False"
+                                                  Unloaded="DataGrid_Unloaded"
+                                                  Loaded="DataGrid_Loaded"
+                                                  RowEditEnding="DataGrid_RowEditEnding"
+                                                  SelectedItem="{Binding SelectedBankAccount}"
+                                                  ItemsSource="{Binding BankAccounts}"
+                                                  Background="Transparent"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  MaxHeight="200">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="IBAN"
+                                                                    Width="200"
+                                                                    Binding="{Binding IBAN, UpdateSourceTrigger=PropertyChanged}" />
+                                                <DataGridTemplateColumn Header="Банк">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <ComboBox ItemsSource="{Binding DataContext.Banks, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                                      SelectedItem="{Binding Path=Bank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                                      DisplayMemberPath="Name"
+                                                                      Text="{Binding Path=Bank.Name}"
+                                                                      IsTextSearchEnabled="True"
+                                                                      TextSearch.TextPath="Name"
+                                                                      IsEditable="False" />
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn Width="100">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <materialDesign:Badged Badge="DELETE"
+                                                                                   BadgeColorZoneMode="Dark">
+                                                                <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                                        ToolTip="Удалить"
+                                                                        Command="{Binding DataContext.RemoveBankAccountCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                                        CommandParameter="{Binding DataContext.SelectedBankAccount, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                                    <materialDesign:PackIcon Width="24"
+                                                                                             Height="24"
+                                                                                             HorizontalAlignment="Left"
+                                                                                             Kind="Delete" />
+                                                                </Button>
+                                                            </materialDesign:Badged>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <materialDesign:Badged Margin="0,20,0,0"
+                                                               Badge="ADD"
+                                                               BadgeColorZoneMode="Dark">
+                                            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                    ToolTip="Добавить"
+                                                    Command="{Binding DataContext.AddBankAccountCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                <materialDesign:PackIcon Width="24"
+                                                                         Height="24"
+                                                                         HorizontalAlignment="Left"
+                                                                         Kind="Add" />
+                                            </Button>
+                                        </materialDesign:Badged>
+                                    </StackPanel>
+                                </materialDesign:Card>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <Border Grid.Row="1"
+                            BorderThickness="0,0,1,0"
+                            BorderBrush="Black">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100*" />
+                                <RowDefinition Height="25*" />
+                            </Grid.RowDefinitions>
+                            <DataGrid SelectionUnit="FullRow"
+                                      x:Name="grid_stores"
+                                      CanUserDeleteRows="False"
+                                      CanUserAddRows="False"
+                                      AutoGenerateColumns="False"
+                                      SelectedItem="{Binding SelectedStore}"
+                                      ItemsSource="{Binding Stores}"
+                                      Background="Transparent"
+                                      Unloaded="DataGrid_Unloaded"
+                                      Loaded="DataGrid_Loaded"
+                                      SelectionChanged="grid_stores_Selected"
+                                      RowEditEnding="DataGrid_RowEditEnding"
+                                      HorizontalAlignment="Stretch"
+                                      VerticalAlignment="Stretch">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Название"
+                                                        Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                                    <DataGridTextColumn Header="Адрес"
+                                                        Binding="{Binding Address, UpdateSourceTrigger=PropertyChanged}" />
+                                    <DataGridTextColumn Header="Телефон"
+                                                        Binding="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" />
+                                    <DataGridTemplateColumn Header="Счёт">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox VerticalAlignment="Top"
+                                                          ItemsSource="{Binding DataContext.BankAccounts, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                          SelectedItem="{Binding Path=BankAccount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                          DisplayMemberPath="IBAN"
+                                                          Text="{Binding Path=BankAccount.IBAN}"
+                                                          IsTextSearchEnabled="True"
+                                                          TextSearch.TextPath="IBAN"
+                                                          IsEditable="False" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <materialDesign:Badged Badge="DELETE"
+                                                                       BadgeColorZoneMode="Dark">
+                                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                            ToolTip="Удалить"
+                                                            Command="{Binding DataContext.RemoveStoreCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                            CommandParameter="{Binding DataContext.SelectedStore, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                        <materialDesign:PackIcon Width="24"
+                                                                                 Height="24"
+                                                                                 HorizontalAlignment="Left"
+                                                                                 Kind="Delete" />
+                                                    </Button>
+                                                </materialDesign:Badged>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <StackPanel Grid.Row="1"
+                                        Orientation="Horizontal">
+                                <materialDesign:Badged VerticalAlignment="Center"
+                                                       Margin="10,20,0,0"
+                                                       Badge="ADD"
+                                                       BadgeColorZoneMode="Dark">
+                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                            ToolTip="Добавить"
+                                            Command="{Binding DataContext.AddStoreCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                        <materialDesign:PackIcon Width="24"
+                                                                 Height="24"
+                                                                 HorizontalAlignment="Left"
+                                                                 Kind="Add" />
+                                    </Button>
+                                </materialDesign:Badged>
+                                <materialDesign:Badged VerticalAlignment="Center"
+                                                       Margin="20,20,0,0"
+                                                       Badge="PASTE"
+                                                       BadgeColorZoneMode="Dark">
+                                    <Button Click="Button_Click"
+                                            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                            ToolTip="Перенести">
+                                        <materialDesign:PackIcon Width="24"
+                                                                 Height="24"
+                                                                 HorizontalAlignment="Left"
+                                                                 Kind="ClipboardArrowLeft" />
+                                    </Button>
+                                </materialDesign:Badged>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="0,0,0,2"
+                            BorderBrush="Black"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="0">
+                        <DockPanel>
+                            <wv2:WebView2 Name="webView"
+                                          Source="https://www.google.com/maps/"
+                                          SourceChanged="webView_SourceChanged" />
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem Width="140"
+                     VerticalAlignment="Center"
+                     x:Name="tabitem_orders"
+                     Selector.Selected="tabcontrol_Selected">
+                <TabItem.Header>
+                    <StackPanel Width="111"
+                                Height="auto"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <materialDesign:PackIcon Width="24"
+                                                 Height="24"
+                                                 HorizontalAlignment="Left"
+                                                 Kind="TruckDelivery"
+                                                 Margin="0,0,0,0" />
+                        <TextBlock Margin="15,0,0,0"
+                                   HorizontalAlignment="Left"
+                                   Text="Заказы"
+                                   LineHeight="NaN"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Border BorderThickness="0,0,0,2"
+                            BorderBrush="Black"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="0">
+                        <DockPanel>
+                            <wv2:WebView2 Name="webView2"
+                                          Source="https://www.google.com/maps/"
+                                          SourceChanged="webView_SourceChanged" />
+                        </DockPanel>
+                    </Border>
+                    <TabControl HorizontalAlignment="Stretch"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                materialDesign:ColorZoneAssist.Background="Crimson"
+                                materialDesign:ColorZoneAssist.Foreground="White"
+                                materialDesign:ColorZoneAssist.Mode="Custom"
+                                Style="{StaticResource MaterialDesignFilledTabControl}">
+                        <TabItem Header="Продукция">
+                            <Grid Grid.Row="1">
+                                <Image Source="/Resources/profit_income_233529.png"
+                                    Stretch="Uniform"
+                                    HorizontalAlignment="Right"
+                                    Grid.Row="1"
+                                    Grid.Column="1" />
+                                <DataGrid SelectionUnit="FullRow"
+                                          CanUserDeleteRows="False"
+                                          CanUserAddRows="False"
+                                          AutoGenerateColumns="False"
+                                          Unloaded="DataGrid_Unloaded"
+                                          RowEditEnding="DataGrid_RowEditEnding"
+                                          ItemsSource="{Binding Products}"
+                                          SelectedItem="{Binding SelectedProduct}"
+                                          Background="Transparent"
+                                          MaxHeight="290"
+                                          Grid.Row="1"
+                                          Grid.Column="1"
+                                          VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Номер"
+                                                            Binding="{Binding Id}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTextColumn Header="Товар"
+                                                            Binding="{Binding Product_Type.Name}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTextColumn Header="Дата производства"
+                                                            Binding="{Binding Date_Of_Production}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTemplateColumn Width="100">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <materialDesign:Badged Badge="DELETE"
+                                                                           BadgeColorZoneMode="Dark">
+                                                        <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                                ToolTip="Удалить"
+                                                                Command="{Binding DataContext.RemoveSupplyCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                                CommandParameter="{Binding SelectedProduct, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                            <materialDesign:PackIcon Width="24"
+                                                                                     Height="24"
+                                                                                     HorizontalAlignment="Left"
+                                                                                     Kind="Delete" />
+                                                        </Button>
+                                                    </materialDesign:Badged>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="История заказов">
+                            <Grid Grid.Row="1">
+                                <Image Source="/Resources/profit_income_233529.png"
+                                    Stretch="Uniform"
+                                    HorizontalAlignment="Right"
+                                    Grid.Row="1"
+                                    Grid.Column="1" />
+                                <DataGrid SelectionUnit="FullRow"
+                                          CanUserDeleteRows="False"
+                                          CanUserAddRows="False"
+                                          AutoGenerateColumns="False"
+                                          Unloaded="DataGrid_Unloaded"
+                                          RowEditEnding="DataGrid_RowEditEnding"
+                                          ItemsSource="{Binding HistoryOrders}"
+                                          Background="Transparent"
+                                          MaxHeight="290"
+                                          Grid.Row="1"
+                                          Grid.Column="1"
+                                          VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Номер"
+                                                            Binding="{Binding Id}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTextColumn Header="Магазин"
+                                                            Binding="{Binding Store.Name}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTextColumn Header="Товар"
+                                                            Binding="{Binding Product_Type.Name}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTextColumn Header="Дата"
+                                                            Binding="{Binding Date}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTextColumn Header="Количество"
+                                                            Binding="{Binding Count}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTextColumn Header="Сумма (BYN)"
+                                                            Binding="{Binding Money}"
+                                                            IsReadOnly="True" />
+                                        
+                                    </DataGrid.Columns>
+                                </DataGrid>    
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <Border BorderThickness="0,0,1,0"
+                            BorderBrush="Black"
+                            Grid.Row="1"
+                            Grid.Column="0">
+                        <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp8"
+                                             Padding="10,0,10,10"
+                                             UniformCornerRadius="14"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center">
+                            <StackPanel>
+                                <DataGrid SelectionUnit="FullRow"
+                                          CanUserDeleteRows="False"
+                                          CanUserAddRows="False"
+                                          CanUserSortColumns="False"
+                                          AutoGenerateColumns="False"
+                                          Unloaded="DataGrid_Unloaded"
+                                          RowEditEnding="DataGrid_RowEditEnding"
+                                          SelectedItem="{Binding SelectedOrder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          ItemsSource="{Binding Orders}"
+                                          Background="Transparent"
+                                          MaxHeight="230"
+                                          Name="grid_orders"
+                                          SelectionChanged="grid_orders_Selected">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Номер"
+                                                            Binding="{Binding Id}"
+                                                            IsReadOnly="True" />
+                                        <DataGridTemplateColumn Header="Магазин">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <ComboBox ItemsSource="{Binding DataContext.Stores, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                              SelectedItem="{Binding Path=Store, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                              Text="{Binding Path=Store.Name}"
+                                                              DisplayMemberPath="Name"
+                                                              IsTextSearchEnabled="True"
+                                                              TextSearch.TextPath="Name"
+                                                              IsEditable="True"
+                                                              VerticalAlignment="Top" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn Header="Товар">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <ComboBox ItemsSource="{Binding DataContext.ProductTypes, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                              SelectedValue="{Binding Path=Product_Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                              SelectedValuePath="Id"
+                                                             
+                                                              DisplayMemberPath="Name"
+                                                              IsTextSearchEnabled="True"
+                                                              TextSearch.TextPath="Name"
+                                                              IsEditable="True"
+                                                              VerticalAlignment="Top" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn Header="Дата"
+                                                                CanUserSort="True"
+                                                                SortMemberPath="Date">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <DatePicker VerticalAlignment="Top"
+                                                                SelectedDate="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Количество"
+                                                            Binding="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        <DataGridTemplateColumn Width="100">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <materialDesign:Badged Badge="DELETE"
+                                                                           BadgeColorZoneMode="Dark">
+                                                        <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                                ToolTip="Удалить"
+                                                                Command="{Binding DataContext.RemoveOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                                CommandParameter="{Binding DataContext.SelectedOrder, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                                            <materialDesign:PackIcon Width="24"
+                                                                                     Height="24"
+                                                                                     HorizontalAlignment="Left"
+                                                                                     Kind="Delete" />
+                                                        </Button>
+                                                    </materialDesign:Badged>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <StackPanel Orientation="Horizontal"
+                                            Margin="0,20,0,0">
+                                    <materialDesign:Badged Badge="ADD"
+                                                           BadgeColorZoneMode="Dark">
+                                        <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                ToolTip="Добавить"
+                                                Command="{Binding DataContext.AddOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                            <materialDesign:PackIcon Width="24"
+                                                                     Height="24"
+                                                                     HorizontalAlignment="Left"
+                                                                     Kind="Add" />
+                                        </Button>
+                                    </materialDesign:Badged>
+                                    <materialDesign:Badged Badge="PUT IN"
+                                                           Margin="20,00,0,0"
+                                                           BadgeColorZoneMode="Dark">
+                                        <materialDesign:PopupBox Content="PopupBox"
+                                                                 Margin="0,10,0,0"
+                                                                 StaysOpen="True">
+                                            <StackPanel>
+                                                <DataGrid SelectionUnit="FullRow"
+                                                          CanUserDeleteRows="False"
+                                                          CanUserAddRows="False"
+                                                          AutoGenerateColumns="False"
+                                                          Unloaded="DataGrid_Unloaded"
+                                                          RowEditEnding="DataGrid_RowEditEnding"
+                                                          ItemsSource="{Binding AllProducts}"
+                                                          SelectedItem="{Binding SelectedProduct}"
+                                                          Background="Transparent"
+                                                          MaxHeight="290">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Header="Номер"
+                                                                            Binding="{Binding Id}"
+                                                                            IsReadOnly="True" />
+                                                        <DataGridTextColumn Header="Товар"
+                                                                            Binding="{Binding Product_Type.Name}"
+                                                                            IsReadOnly="True" />
+                                                        <DataGridTextColumn Header="Дата производства"
+                                                                            Binding="{Binding Date_Of_Production}"
+                                                                            IsReadOnly="True" />
+                                                    </DataGrid.Columns>
+                                                    <i:Interaction.Triggers>
+                                                        <i:EventTrigger EventName="SelectionChanged">
+                                                            <i:InvokeCommandAction Command="{Binding AddSupplyCommand}"
+                                                                                   CommandParameter="{Binding SelectedProduct}" />
+                                                        </i:EventTrigger>
+                                                    </i:Interaction.Triggers>
+                                                </DataGrid>
+                                            </StackPanel>
+                                        </materialDesign:PopupBox>
+                                    </materialDesign:Badged>
+                                    <materialDesign:Badged Margin="20,0,0,0"
+                                                           Badge="REALESE"
+                                                           BadgeColorZoneMode="Dark">
+                                        <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                ToolTip="Реализовать"
+                                                Command="{Binding DataContext.RealeseOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                                CommandParameter="{Binding SelectedOrder, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+                                            <materialDesign:PackIcon Width="24"
+                                                                     Height="24"
+                                                                     HorizontalAlignment="Left"
+                                                                     Kind="BoxArrowDown" />
+                                        </Button>
+                                    </materialDesign:Badged>
+                                </StackPanel>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <!-- <TabItem Width="140" VerticalAlignment="Center" x:Name="tabitem_supplies" Selector.Selected="tabcontrol_Selected">
+
+				<TabItem.Header>
+					<StackPanel
+				Width="111"
+				Height="auto" 
+						
+				Orientation="Horizontal"
+				HorizontalAlignment="Left" VerticalAlignment="Center">
+						<materialDesign:PackIcon
+				Width="24"
+				Height="24"
+				HorizontalAlignment="Left"
+				Kind="TruckDelivery" />
+						<TextBlock
+				Margin="10,0,0,0"
+				HorizontalAlignment="Left"
+				Text="Поставки" LineHeight="NaN" VerticalAlignment="Center" />
+					</StackPanel>
+				</TabItem.Header>
+				<Grid Grid.Row="1">
+					<Image Source="/Resources/profit_income_233529.png" Stretch="None" HorizontalAlignment="Right"/>
+					<materialDesign:Card
+					  materialDesign:ElevationAssist.Elevation="Dp8"
+					  Padding="10,0,10,10"
+					  UniformCornerRadius="14" HorizontalAlignment="Center" VerticalAlignment="Center">
+						<StackPanel>
+							<ComboBox x:Name="listBoxPatients" 
+							   ItemsSource="{Binding Orders}"
+							   SelectedItem="{Binding SelectedOrder}"
+							   IsSynchronizedWithCurrentItem="True">
+								<ComboBox.ItemTemplate>
+									<DataTemplate>
+										<StackPanel>
+											<TextBlock Text="{Binding Path=Store.Name}"/>
+										</StackPanel>
+									</DataTemplate>
+								</ComboBox.ItemTemplate>
+							</ComboBox>
+
+							<DataGrid SelectionUnit="FullRow" 
+									  CanUserDeleteRows="False" 
+									  CanUserAddRows="False" 
+									  AutoGenerateColumns="False"
+									  Unloaded="DataGrid_Unloaded"
+									  RowEditEnding="DataGrid_RowEditEnding"
+									  ItemsSource="{Binding Products}" 
+									  SelectedItem="{Binding SelectedProduct}"
+									  Background="Transparent"
+									  MaxHeight="290">
+								<DataGrid.Columns>
+									<DataGridTextColumn Header="Номер" Binding="{Binding Id}" IsReadOnly="True"/>
+									<DataGridTextColumn Header="Тип продукта" Binding="{Binding Product_Type.Name}" IsReadOnly="True"/>
+									<DataGridTextColumn Header="Дата производства" Binding="{Binding Date_Of_Production}" IsReadOnly="True"/>
+									<DataGridTemplateColumn Width="100">
+										<DataGridTemplateColumn.CellTemplate>
+											<DataTemplate>
+												<materialDesign:Badged
+													Badge="DELETE"
+													BadgeColorZoneMode="Dark">
+													<Button
+														Style="{StaticResource MaterialDesignIconForegroundButton}"
+														ToolTip="Удалить"
+														Command="{Binding DataContext.RemoveSupplyCommand, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+														CommandParameter="{Binding SelectedProduct, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+														>
+														<materialDesign:PackIcon
+														Width="24"
+														Height="24"
+														HorizontalAlignment="Left"
+														Kind="Delete" 
+														/>
+													</Button>
+												</materialDesign:Badged>
+											</DataTemplate>
+										</DataGridTemplateColumn.CellTemplate>
+									</DataGridTemplateColumn>
+								</DataGrid.Columns>
+							</DataGrid>
+							<StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+							   
+							</StackPanel>
+						</StackPanel>
+					</materialDesign:Card>
+
+				</Grid>
+			</TabItem> -->
+            <TabItem Width="140"
+                     VerticalAlignment="Center"
+                     x:Name="tabitem_statistic"
+                     Selector.Selected="tabcontrol_Selected">
+                <TabItem.Header>
+                    <StackPanel Height="auto"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <materialDesign:PackIcon Width="24"
+                                                 Height="24"
+                                                 HorizontalAlignment="Left"
+                                                 Kind="ChartLine" />
+                        <TextBlock Margin="10,0,0,0"
+                                   HorizontalAlignment="Left"
+                                   Text="Статистика"
+                                   LineHeight="NaN"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Image Source="/Resources/finance_annual_233525.png"
+                           Stretch="None"
+                           HorizontalAlignment="Right"
+                           Grid.Row="1"
+                           Grid.Column="1" />
+                    <lvc:CartesianChart XAxes="{Binding XAxes}"
+                                        Series="{Binding Series}"
+                                        Title="{Binding Title}" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <ProgressBar x:Name="ProgressCircle"
+                     IsIndeterminate="True"
+                     Style="{StaticResource MaterialDesignCircularProgressBar}"
+                     Value="20"
+                     Visibility="Hidden"
+                     Grid.Row="1"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Height="20"
+                     Width="20" />
+        <materialDesign:Snackbar x:Name="SnackbarInfo"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalAlignment="Bottom"
+                                 Grid.Row="1"
+                                 IsActive="False"
+                                 MessageQueue="{materialDesign:MessageQueue}"
+                                 Width="288">
+            <materialDesign:SnackbarMessage x:Name="SnackbarMessage">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <materialDesign:PackIcon x:Name="SnackPackIcon"
+                                             Width="24"
+                                             Height="24"
+                                             VerticalAlignment="Center"
+                                             HorizontalAlignment="Left"
+                                             Kind="Error" />
+                    <TextBlock Margin="10,0,0,0"
+                               x:Name="SnackbarText"
+                               VerticalAlignment="Center" />
+                </StackPanel>
+            </materialDesign:SnackbarMessage>
+        </materialDesign:Snackbar>
+        <ToggleButton x:Name="theme_button"
+                      materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=MoonAndStars}"
+                      Content="{materialDesign:PackIcon Kind=WhiteBalanceSunny}"
+                      Style="{StaticResource MaterialDesignActionToggleButton}"
+                      ToolTip="Изменить тему"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Center"
+                      Margin="0,-10,10,0"
+                      Click="theme_button_Click"
+                      Grid.Row="0"
+                      Height="32"
+                      Width="32" />
+        <!-- <Separator Margin="0,109,0,0" VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="3"/> -->
+        <!-- <ListBox x:Name="listbox1" Grid.Column="1" Grid.Row="1"
+				 SelectedItem="{Binding SelectedProductType}" Margin="168,120,168,33" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding ProductTypes}" d:IsHidden="True">
+			<ListBox.DataContext>
+				<ViewModels:ProductTypeViewModel/>
+			</ListBox.DataContext>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Margin="5">
+						<StackPanel Margin="5" Orientation="Horizontal">
+							<TextBlock FontSize="16" Text="{Binding Path=Name}" />
+						</StackPanel>
+						<StackPanel Margin="5" Orientation="Horizontal">
+							<TextBlock Text="Цена: " />
+							<TextBlock Text="{Binding Path=Price}" />
+							<TextBlock Text=" BYN" />
+						</StackPanel>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox> -->
+    </Grid>
+</Window>
